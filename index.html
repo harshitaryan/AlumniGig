@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlumniGig - Login</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="main-header">
+      <h1 class="logo">AlumniGig</h1>
+      <p class="tagline">Connect. Collaborate. Create Opportunities.</p>
+    </header>
+
+    <main class="login-grid">
+      <!-- Student Login Column -->
+      <section class="login-card student-section">
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10v6" />
+            <path d="M12 2 2 7l10 5 10-5-10-5z" />
+            <path d="m22 2-5 5" />
+          </svg>
+        </div>
+        <h2>Student Login</h2>
+        <p class="section-subtitle">Access opportunities from alumni in your network</p>
+
+        <form id="student-form" class="login-form">
+          <div class="form-group">
+            <label for="email">University Email</label>
+            <input type="email" id="email" name="email" placeholder="you@university.edu" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+
+          <div class="form-row">
+            <label class="checkbox-container">
+              <input type="checkbox" id="remember">
+              <span class="checkmark"></span>
+              Remember me
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="sign-in-btn">Sign In</button>
+
+          <div class="form-footer">
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+        </form>
+
+        <div class="promo-box">
+          <div class="promo-icon">
+            <!-- Info/Clock icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+          </div>
+          <div class="promo-content">
+            <strong>New to AlumniGig?</strong>
+            <p>Use your university email to create an account and start connecting with alumni for internships,
+              freelance projects, and mentorship opportunities.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider for desktop / Spacer -->
+      <div class="divider"></div>
+
+      <!-- Alumni Login Column -->
+      <section class="login-card alumni-section">
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        </div>
+        <h2>Alumni Login</h2>
+        <p class="section-subtitle">Post gigs and mentor the next generation</p>
+
+        <button type="button" class="btn btn-linkedin" id="linkedin-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          Continue with LinkedIn
+        </button>
+
+        <div class="auth-separator">
+          <span>Secure authentication</span>
+        </div>
+
+        <div class="info-card">
+          <div class="info-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <strong>Why LinkedIn?</strong>
+          </div>
+          <p>We use LinkedIn to verify your professional identity and automatically populate your profile with your
+            experience, making it easier to connect with students.</p>
+        </div>
+
+        <div class="trust-footer">
+          <p>Your data is secure and we never post without permission</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Profile Setup Section (Hidden by default) -->
+    <section id="profile-setup" class="profile-setup hidden">
+      <header class="profile-header">
+        <h1 class="logo">AlumniGig</h1>
+        <h2>Welcome! Let's set up your profile</h2>
+        <p>This will only take a minute</p>
+      </header>
+
+      <div class="stepper-container card">
+        <div class="stepper">
+          <div class="step active" data-step="1">
+            <div class="step-num">1</div>
+            <div class="step-label">Username</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="2">
+            <div class="step-num">2</div>
+            <div class="step-label">Semester</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="3">
+            <div class="step-num">3</div>
+            <div class="step-label">Department</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="4">
+            <div class="step-num">4</div>
+            <div class="step-label">Skills</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-content card">
+        <!-- Step 1: Username -->
+        <div class="setup-step active" id="setup-step-1">
+          <h3 class="setup-title">Choose your username</h3>
+          <p class="setup-subtitle">This is how you'll be known to alumni and other students on the platform.</p>
+
+          <div class="form-group">
+            <label for="setup-username">Username</label>
+            <input type="text" id="setup-username" placeholder="e.g., john_doe or johndoe123">
+            <p class="input-info"><span class="info-icon">i</span> Use letters, numbers, and underscores only</p>
+          </div>
+
+          <div class="form-group" style="margin-top: 1rem;">
+            <label for="setup-bio">Personal Bio</label>
+            <textarea id="setup-bio"
+              placeholder="Tell us a bit about yourself, your career goals, or what you're looking for..."></textarea>
+          </div>
+
+          <div class="setup-footer">
+            <button class="btn btn-primary next-step" data-next="2">Continue <span class="arrow">→</span></button>
+          </div>
+        </div>
+
+        <!-- Step 2: Semester -->
+        <div class="setup-step" id="setup-step-2">
+          <h3 class="setup-title">What semester are you in?</h3>
+          <p class="setup-subtitle">This helps us match you with relevant opportunities for your experience level.</p>
+
+          <div class="form-group">
+            <label for="setup-semester">Current Semester</label>
+            <select id="setup-semester">
+              <option value="" disabled selected>Select your semester</option>
+              <option value="1">Semester 1</option>
+              <option value="2">Semester 2</option>
+              <option value="3">Semester 3</option>
+              <option value="4">Semester 4</option>
+              <option value="5">Semester 5</option>
+              <option value="6">Semester 6</option>
+              <option value="7">Semester 7</option>
+              <option value="8">Semester 8</option>
+            </select>
+          </div>
+
+          <div class="setup-footer split">
+            <button class="btn btn-secondary prev-step" data-prev="1">← Back</button>
+            <button class="btn btn-primary next-step" data-next="3">Continue →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Department -->
+        <div class="setup-step" id="setup-step-3">
+          <h3 class="setup-title">Select your department</h3>
+          <p class="setup-subtitle">Choose your school or department to connect with relevant alumni.</p>
+
+          <div class="form-group">
+            <label for="setup-department">Department/School</label>
+            <select id="setup-department">
+              <option value="" disabled selected>Select your department</option>
+              <option value="ASET">ASET (Amity School of Engineering & Technology)</option>
+              <option value="ABS">ABS (Amity Business School)</option>
+              <option value="AIB">AIB (Amity Institute of Biotechnology)</option>
+              <option value="ASCO">ASCO (Amity School of Communication)</option>
+              <option value="AIIT">AIIT (Amity Institute of Information Technology)</option>
+              <option value="AIPS">AIPS (Amity Institute of Psychology & Allied Sciences)</option>
+              <option value="ALS">ALS (Amity Law School)</option>
+              <option value="ACCF">ACCF (Amity College of Commerce & Finance)</option>
+              <option value="OTHER">Other (Please specify)</option>
+            </select>
+          </div>
+
+          <div class="form-group hidden" id="setup-department-other-group" style="margin-top: 1rem;">
+            <label for="setup-department-other">Please specify your department</label>
+            <input type="text" id="setup-department-other" placeholder="Enter your school/department name">
+          </div>
+
+          <div class="setup-footer split">
+            <button class="btn btn-secondary prev-step" data-prev="2">← Back</button>
+            <button class="btn btn-primary next-step" data-next="4">Continue →</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Skills -->
+        <div class="setup-step" id="setup-step-4">
+          <h3 class="setup-title">What are your skills?</h3>
+          <p class="setup-subtitle">Add your skills to help alumni find you for relevant gigs and projects.</p>
+
+          <div class="form-group skill-input-group">
+            <label for="setup-skill-input">Add Skills</label>
+            <div class="skill-input-row">
+              <input type="text" id="setup-skill-input" placeholder="e.g. web design">
+              <button id="add-skill-btn" class="btn btn-primary small">Add</button>
+            </div>
+            <p class="input-info">Press Enter or click Add to include each skill</p>
+          </div>
+
+          <div id="selected-skills" class="skills-tags">
+            <!-- Dynamically added tags will go here -->
+          </div>
+
+          <div class="popular-skills">
+            <p>Popular skills in your field:</p>
+            <div class="popular-tags">
+              <span class="popular-tag">Python</span>
+              <span class="popular-tag">Java</span>
+              <span class="popular-tag">C++</span>
+              <span class="popular-tag">Machine Learning</span>
+              <span class="popular-tag">Web Development</span>
+              <span class="popular-tag">Data Structures</span>
+              <span class="popular-tag">Cloud Computing</span>
+              <span class="popular-tag">DevOps</span>
+            </div>
+          </div>
+
+          <div class="setup-footer split">
+            <button class="btn btn-secondary prev-step" data-prev="3">← Back</button>
+            <button id="complete-profile-btn" class="btn btn-success">✓ Complete Profile</button>
+          </div>
+        </div>
+
+        <!-- Success Step -->
+        <div class="setup-step" id="setup-success">
+          <div class="success-icon-wrapper">
+            <div class="success-icon">✓</div>
+          </div>
+          <h3 class="setup-title">You're all set!</h3>
+          <p class="setup-subtitle">Your profile is complete. Start exploring gig opportunities from alumni.</p>
+
+          <div class="setup-footer center">
+            <button class="btn btn-primary" id="go-to-dashboard">Go to Dashboard →</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+
+  <!-- Dashboard Section (Hidden by default) -->
+  <div id="dashboard" class="dashboard-container hidden">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">AlumniGig</h1>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-view="home">
+          <span class="nav-icon">🏠</span> Home
+        </button>
+        <button class="nav-item" data-view="gigs">
+          <span class="nav-icon">💼</span> Gigs / Freelance Work
+        </button>
+        <button class="nav-item" data-view="applications">
+          <span class="nav-icon">📝</span> My Applications
+        </button>
+        <button class="nav-item" data-view="messages">
+          <span class="nav-icon">💬</span> Messages
+        </button>
+        <button class="nav-item" data-view="profile">
+          <span class="nav-icon">👤</span> Profile
+        </button>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <!-- View: Home -->
+      <section id="view-home" class="dashboard-view active">
+        <div class="home-grid">
+          <div class="profile-summary-card card">
+            <div class="avatar-large">RJ</div>
+            <h2 class="user-display-name">Rahul Jain</h2>
+            <p class="user-handle">@rahul_jain</p>
+
+            <div class="stat-box rating-info-box">
+              <p>Your Rating</p>
+              <div class="stars" id="dashboard-rating-stars">★★★★★</div>
+              <h3 id="dashboard-rating-value">4.8 / 5.0</h3>
+            </div>
+
+            <div class="stat-box apps-info-box">
+              <p>Applications Requested</p>
+              <h3 id="dashboard-apps-count">12</h3>
+            </div>
+          </div>
+
+          <div class="chart-card card">
+            <h3 class="card-title">Gigs Completed</h3>
+            <div class="chart-container">
+              <div class="pie-chart-container">
+                <svg viewBox="0 0 32 32" class="pie-chart-interactive">
+                  <!-- Data: Tech: 9 (45%), Creative: 5 (25%), Research: 3 (15%), Other: 3 (15%) -->
+                  <circle class="chart-segment" r="16" cx="16" cy="16" stroke="#0066ff" stroke-dasharray="45 100"
+                    stroke-dashoffset="0" data-label="Tech Projects" data-value="9" data-color="#0066ff"></circle>
+                  <circle class="chart-segment" r="16" cx="16" cy="16" stroke="#f97316" stroke-dasharray="25 100"
+                    stroke-dashoffset="-45" data-label="Creative Work" data-value="5" data-color="#f97316"></circle>
+                  <circle class="chart-segment" r="16" cx="16" cy="16" stroke="#10b981" stroke-dasharray="15 100"
+                    stroke-dashoffset="-70" data-label="Research" data-value="3" data-color="#10b981"></circle>
+                  <circle class="chart-segment" r="16" cx="16" cy="16" stroke="#8b5cf6" stroke-dasharray="15 100"
+                    stroke-dashoffset="-85" data-label="Other" data-value="3" data-color="#8b5cf6"></circle>
+                </svg>
+                <div id="chart-tooltip" class="chart-tooltip hidden">
+                  <span class="tooltip-color"></span>
+                  <div class="tooltip-text">
+                    <strong id="tooltip-label">Research</strong>
+                    <span id="tooltip-value">3</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chart-legend">
+                <div class="legend-item"><span class="dot tech"></span> Tech Projects</div>
+                <div class="legend-item"><span class="dot creative"></span> Creative Work</div>
+                <div class="legend-item"><span class="dot research"></span> Research</div>
+                <div class="legend-item"><span class="dot other"></span> Other</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-banner">
+          "Failure will never overtake me if my determination to succeed is strong enough."
+        </div>
+      </section>
+
+      <!-- View: Browse Gigs -->
+      <section id="view-gigs" class="dashboard-view">
+        <header class="view-header">
+          <h2 class="view-title">Browse Gigs</h2>
+          <p class="view-subtitle">Discover opportunities from alumni in your network</p>
+        </header>
+
+        <div class="filters-card card">
+          <div class="filter-row">
+            <div class="filter-group search-filter">
+              <label>Search</label>
+              <div class="input-with-icon">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search gigs...">
+              </div>
+            </div>
+            <div class="filter-group category-filter">
+              <label>Category</label>
+              <select>
+                <option>All Categories</option>
+                <option>Tech</option>
+                <option>Creative</option>
+                <option>Research</option>
+              </select>
+            </div>
+            <div class="filter-group price-filter">
+              <label>Price Range</label>
+              <select id="price-range-filter">
+                <option>All Prices</option>
+                <option>Under ₹5,000</option>
+                <option>₹5,000 - ₹10,000</option>
+                <option>Over ₹10,000</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="status-tabs">
+            <button class="tab active">All</button>
+            <button class="tab">Open</button>
+            <button class="tab">Reviewing Applications</button>
+            <button class="tab">In Progress</button>
+            <button class="tab">Completed</button>
+          </div>
+        </div>
+
+        <div class="gigs-grid">
+          <!-- Gig Card 1 -->
+          <div class="gig-card card" data-category="Tech" data-status="Open" data-price="8000">
+            <div class="gig-card-header">
+              <div class="avatar-small purple">PS</div>
+              <div class="gig-author-info">
+                <h4>Priya Sharma</h4>
+                <p>Senior Developer at Google</p>
+              </div>
+            </div>
+            <span class="badge badge-tech">TECH</span>
+            <h3 class="gig-title">Build a React Dashboard for Analytics</h3>
+            <p class="gig-desc">Need a modern, responsive dashboard using React and Chart.js to visualize analytics
+              data. Should include user authentication and API integration.</p>
+            <div class="gig-card-footer">
+              <div class="price-tag">
+                <strong>₹8,000</strong>
+                <span>Fixed Price</span>
+              </div>
+              <button class="btn btn-primary small apply-btn">Apply Now</button>
+            </div>
+          </div>
+
+          <!-- Gig Card 2 -->
+          <div class="gig-card card" data-category="Creative" data-status="Reviewing Applications" data-price="3500">
+            <div class="gig-card-header">
+              <div class="avatar-small orange">AK</div>
+              <div class="gig-author-info">
+                <h4>Amit Kumar</h4>
+                <p>Creative Director at Ogilvy</p>
+              </div>
+            </div>
+            <span class="badge badge-creative">CREATIVE</span>
+            <h3 class="gig-title">Design Social Media Graphics</h3>
+            <p class="gig-desc">Create 10 engaging social media graphics for Instagram and LinkedIn. Must align with
+              our brand guidelines and be delivery-ready.</p>
+            <div class="gig-card-footer">
+              <div class="price-tag">
+                <strong>₹3,500</strong>
+                <span>Fixed Price</span>
+              </div>
+              <button class="btn btn-primary small apply-btn">Apply Now</button>
+            </div>
+          </div>
+
+          <!-- Gig Card 3 -->
+          <div class="gig-card card" data-category="Research" data-status="In Progress" data-price="12000">
+            <div class="gig-card-header">
+              <div class="avatar-small blue">NG</div>
+              <div class="gig-author-info">
+                <h4>Dr. Neha Gupta</h4>
+                <p>Research Scientist at ISRO</p>
+              </div>
+            </div>
+            <span class="badge badge-research">RESEARCH</span>
+            <h3 class="gig-title">Data Analysis for Climate Study</h3>
+            <p class="gig-desc">Analyze climate data sets using Python and prepare a comprehensive report with
+              visualizations. Background in data science preferred.</p>
+            <div class="gig-card-footer">
+              <div class="price-tag">
+                <strong>₹12,000</strong>
+                <span>Fixed Price</span>
+              </div>
+              <button class="btn btn-primary small apply-btn">Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- View: My Applications -->
+      <section id="view-applications" class="dashboard-view">
+        <header class="view-header">
+          <h2 class="view-title">My Applications</h2>
+          <p class="view-subtitle">Track the status of your sent applications</p>
+        </header>
+        <div class="card" style="text-align: center; padding: 5rem;">
+          <p style="color: #64748b;">You haven't applied to any gigs yet. <button class="btn-link"
+              onclick="document.querySelector('[data-view=gigs]').click()">Browse Gigs</button></p>
+        </div>
+      </section>
+
+      <!-- View: Messages -->
+      <section id="view-messages" class="dashboard-view">
+        <header class="view-header">
+          <h2 class="view-title">Messages</h2>
+          <p class="view-subtitle">Communicate with alumni about your applications</p>
+        </header>
+        <div class="card" style="text-align: center; padding: 5rem;">
+          <p style="color: #64748b;">Your inbox is empty.</p>
+        </div>
+      </section>
+
+      <!-- View: Profile -->
+      <section id="view-profile" class="dashboard-view">
+        <header class="view-header">
+          <h2 class="view-title">My Profile</h2>
+          <p class="view-subtitle">Manage your personal information and resume</p>
+        </header>
+        <div class="card">
+          <div class="form-group">
+            <label for="profile-name">Full Name</label>
+            <input type="text" id="profile-name" value="Rahul Jain" readonly>
+          </div>
+
+          <div class="form-group" style="margin-top: 1rem;">
+            <label for="profile-bio">Bio</label>
+            <textarea id="profile-bio" readonly
+              style="width: 100%; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; font-family: inherit;">Passionate student looking for tech and research opportunities.</textarea>
+          </div>
+
+          <div class="filter-row" style="margin-top: 1rem;">
+            <div class="form-group" style="flex: 1;">
+              <label for="profile-semester">Semester</label>
+              <select id="profile-semester" disabled>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+              </select>
+            </div>
+            <div class="form-group" style="flex: 1;">
+              <label for="profile-department">Department</label>
+              <select id="profile-department" disabled>
+                <option value="ASET">ASET</option>
+                <option value="ABS">ABS</option>
+                <option value="AIB">AIB</option>
+                <option value="ASCO">ASCO</option>
+                <option value="AIIT">AIIT</option>
+                <option value="AIPS">AIPS</option>
+                <option value="ALS">ALS</option>
+                <option value="ACCF">ACCF</option>
+                <option value="OTHER">Other</option>
+              </select>
+              <input type="text" id="profile-department-other" class="hidden" placeholder="Specify department"
+                style="margin-top: 0.5rem; width: 100%; padding: 0.5rem; border: 1px solid #e2e8f0; border-radius: 4px;">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1rem;">
+            <label>Skills</label>
+            <div id="profile-skills-container" class="skills-tags">
+              <!-- Tags will be rendered here -->
+            </div>
+            <div id="profile-skills-edit" class="hidden" style="margin-top: 0.5rem;">
+              <div class="skill-input-row">
+                <input type="text" id="profile-skill-input" placeholder="Add a skill...">
+                <button id="profile-add-skill-btn" class="btn btn-primary small">Add</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="edit-profile-btn" style="margin-top: 2rem;">Edit Profile</button>
+          <button class="btn btn-danger" id="logout-btn" style="margin-top: 1rem; width: 100%;">Log Out</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
